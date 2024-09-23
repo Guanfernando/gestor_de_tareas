@@ -9,9 +9,15 @@ class Tarea{
     };
 };
 
+// crear valores aleatorios para el ID
+function generarId(){
+    return Math.floor(Math.random() * 10000) + 1;
+    }
+
+
 //pasar los valores de la clase tarea a la instancia (funcion) crearTarea
 function crearTarea (){
-let id = document.getElementById('id').value;
+let id = generarId();
 let fecha = document.getElementById('fecha').value;
 let titulo = document.getElementById('titulo').value;
 let descripcion = document.getElementById('descripcion').value;
