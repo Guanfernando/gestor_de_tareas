@@ -1,0 +1,29 @@
+*{
+    color: aliceblue;
+}
+body {
+    display: flexbox;
+    flex-direction: column;
+    padding: 10px;
+    color: rgb(215, 219, 223);
+    background-color: rgb(30, 30, 41);
+    text-align: center;    
+}
+
+h1,h3{
+    padding: 10px;
+    color: rgb(215, 219, 223);
+    font-family: "Merienda", cursive;
+    font-size: 50px;
+}
+
+#imagenGestor{
+    width: 200px;
+    object-fit: cover;
+    border-radius: 5%;     
+}
+
+.form-control{
+    margin: 5px;
+}
+
