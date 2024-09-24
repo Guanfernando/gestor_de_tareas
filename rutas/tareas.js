@@ -17,7 +17,7 @@ const Tarea = mongoose.model('Tarea', tareaSchema);
 
 //ruta para agregar una nueva tarea
 router.post ('/', async(req,res) =>{
-    const tarea = new modeloTarea({
+    const nuevaTarea = new Tarea({
         id : req.body.id,
         fecha : req.body.fecha,
         titulo : req.body.titulo,
@@ -26,13 +26,26 @@ router.post ('/', async(req,res) =>{
         });
         try{
 
-            const tareaGuardada = await tarea.save();
+            //guardar la tarea en la base de datos
+            const tareaGuardada = await nuevaTarea.save();
             res.json(tareaGuardada);
             }
+            
+            //manejo de error al guardar
             catch(error){
                 res.status(400).json({message: error.message});
                 }
     });
+
+//obtener todas las tareas 
+router.get('/', async (req, res)=> {
+    try {
+        const tareas = await Tarea.find();
+        res.json(tareas);
+        } catch (error) {
+            res.status(400).json({message: error.message});
+            }
+});
 
 
 module.exports = router;            

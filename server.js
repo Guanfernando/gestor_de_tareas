@@ -7,7 +7,7 @@ const registroDB  = require('./conexion');
 //importar el archivo de las rutas y el modelo de la tarea
 const rutaTarea = require('./rutas/tareas');
 
-//importar el body parser para manejar solicitudes HTP
+//importar el body parser para manejar solicitudes HTTP
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use ('/api/tareas',rutaTarea);
 
 app.get ('/', (req ,res) => {
-        res.end('Servidor de Backend NODEJS para Gestor de Tareas');
+        res.end('Servidor de Backend NODEJS para Gstor de Tareas');
     })
 
 //configuracion del sevidor
