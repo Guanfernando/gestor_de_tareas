@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Importar estilos desde BOOTSTRAP 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="etilos.css">
+    
+    <!-- Importar las fuentes desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+
+    <title>Gestor de Tareas</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1>GESTOR DE TAREAS</h1>
+                <h3>Lista de tareas</h3>
+            </div>
+            <div class="col-4">
+                <img id="imagenGestor" src="./img/gestor.jpg" class="img-thumbnail" alt="Imagen de gestión de tareas">
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario para registrar tareas -->
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h4>Ingresa tu tarea</h4>
+                <form id="registrarTarea">
+                    <input readonly name="id" id="id" type="number" class="form-control mb-2" placeholder="ID" aria-label="id">
+                    <input name="fecha" id="fecha" type="date" class="form-control mb-2" aria-label="fecha">
+                    <input name="titulo" id="titulo" type="text" class="form-control mb-2" placeholder="TITULO" aria-label="titulo">
+                    <textarea name="descripcion" id="descripcion" class="form-control mb-2" placeholder="Descripción de la tarea"></textarea>
+                    <select name="prioridad" id="prioridad" class="form-control mb-2" aria-label="Nivel de prioridad">
+                        <option value="1">Baja</option>
+                        <option value="2" selected>Media</option>
+                        <option value="3">Alta</option>
+                    </select>
+                    <button type="submit" style="font-size:15px" class="btn btn-primary btn-lg">Guardar Tarea</button>
+                </form>
+            </div>
+
+            <!-- Tabla para mostrar las tareas -->
+            <div class="col-8">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">FECHA</th>
+                            <th scope="col">TÍTULO</th>
+                            <th scope="col">DESCRIPCIÓN</th>
+                            <th scope="col">PRIORIDAD</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mostrarRegistros">
+                        <!-- Aquí se crearán dinámicamente los registros de tareas -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
